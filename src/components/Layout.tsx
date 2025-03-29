@@ -8,6 +8,7 @@ import Navbar from "./Navbar";
 const Layout = () => {
   const { pathname } = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +25,7 @@ const Layout = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar isScrolled={isScrolled} />
+      <Navbar isScrolled={isScrolled} isHomePage={isHomePage} />
       <AnimatePresence mode="wait">
         <motion.main
           key={pathname}

@@ -19,8 +19,9 @@ const ProgramCard = ({ title, image, subjects, brochureLink = "#" }: ProgramCard
       <div className="h-56 overflow-hidden">
         <img
           src={image}
-          alt={title}
+          alt={`${title} - Program Image`}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+          loading="lazy"
         />
       </div>
       <div className="p-6">

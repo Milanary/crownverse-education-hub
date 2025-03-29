@@ -6,9 +6,10 @@ import { Menu, X } from "lucide-react";
 
 interface NavbarProps {
   isScrolled: boolean;
+  isHomePage: boolean;
 }
 
-const Navbar = ({ isScrolled }: NavbarProps) => {
+const Navbar = ({ isScrolled, isHomePage }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation();
 
@@ -29,13 +30,17 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
     };
   }, [isOpen]);
 
+  const navbarBgClass = isHomePage
+    ? isScrolled
+      ? "bg-white shadow-md py-3"
+      : "bg-transparent py-5 md:py-6"
+    : "bg-white/95 backdrop-blur-md shadow-sm py-3";
+
+  const navLinkTextClass = isHomePage && !isScrolled ? "text-white" : "text-crown-navy";
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white shadow-md py-3"
-          : "bg-transparent py-5 md:py-6"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navbarBgClass}`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
@@ -45,7 +50,7 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
                 <span className="text-crown-gold font-poppins font-bold text-lg">CI</span>
               </div>
               <h1 className="ml-2 text-xl font-poppins font-bold">
-                <span className={`${isScrolled ? "text-crown-navy" : "text-white"}`}>Crown</span>
+                <span className={`${isHomePage && !isScrolled ? "text-white" : "text-crown-navy"}`}>Crown</span>
                 <span className="text-crown-gold"> Institute</span>
               </h1>
             </div>
@@ -53,10 +58,10 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-8">
-            <NavLink to="/" label="Home" isScrolled={isScrolled} />
-            <NavLink to="/about" label="About" isScrolled={isScrolled} />
-            <NavLink to="/programs" label="Programs" isScrolled={isScrolled} />
-            <NavLink to="/contact" label="Contact" isScrolled={isScrolled} />
+            <NavLink to="/" label="Home" isHomePage={isHomePage} isScrolled={isScrolled} />
+            <NavLink to="/about" label="About" isHomePage={isHomePage} isScrolled={isScrolled} />
+            <NavLink to="/programs" label="Programs" isHomePage={isHomePage} isScrolled={isScrolled} />
+            <NavLink to="/contact" label="Contact" isHomePage={isHomePage} isScrolled={isScrolled} />
           </nav>
 
           {/* Apply Now Button - Desktop */}
@@ -74,14 +79,14 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-crown-navy z-50"
+            className="md:hidden z-50"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
             {isOpen ? (
               <X className="w-6 h-6 text-crown-navy" />
             ) : (
-              <Menu className={`w-6 h-6 ${isScrolled ? "text-crown-navy" : "text-white"}`} />
+              <Menu className={`w-6 h-6 ${navLinkTextClass}`} />
             )}
           </button>
         </div>
@@ -96,23 +101,24 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
 interface NavLinkProps {
   to: string;
   label: string;
+  isHomePage: boolean;
   isScrolled: boolean;
 }
 
-const NavLink = ({ to, label, isScrolled }: NavLinkProps) => {
+const NavLink = ({ to, label, isHomePage, isScrolled }: NavLinkProps) => {
   const { pathname } = useLocation();
   const isActive = pathname === to;
+  
+  const textColorClass = isActive 
+    ? "text-crown-gold" 
+    : isHomePage && !isScrolled 
+      ? "text-white" 
+      : "text-crown-navy";
   
   return (
     <Link 
       to={to} 
-      className={`nav-link ${
-        isActive 
-          ? "text-crown-gold" 
-          : isScrolled 
-            ? "text-crown-navy" 
-            : "text-white"
-      }`}
+      className={`nav-link ${textColorClass}`}
     >
       {label}
     </Link>
