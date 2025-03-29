@@ -245,7 +245,7 @@ const Programs = () => {
       </section>
       
       {/* Admissions Section */}
-      <section className="py-16 bg-crown-navy text-white mb-8">
+      <section className="py-16 bg-gradient-to-br from-crown-navy to-crown-navy/90 text-white mb-8">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <ScrollReveal direction="right">
@@ -258,13 +258,13 @@ const Programs = () => {
               <ol className="space-y-6 mt-8">
                 <li className="flex">
                   <div className="mr-4">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-crown-gold text-crown-navy font-bold">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-crown-gold text-crown-navy font-bold text-lg">
                       1
                     </div>
                   </div>
                   <div>
                     <h4 className="text-xl font-medium text-crown-gold mb-2">Application</h4>
-                    <p className="text-gray-300">
+                    <p className="text-gray-200">
                       Submit your application form online or in person with all required documents.
                     </p>
                   </div>
@@ -272,13 +272,13 @@ const Programs = () => {
                 
                 <li className="flex">
                   <div className="mr-4">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-crown-gold text-crown-navy font-bold">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-crown-gold text-crown-navy font-bold text-lg">
                       2
                     </div>
                   </div>
                   <div>
                     <h4 className="text-xl font-medium text-crown-gold mb-2">Assessment</h4>
-                    <p className="text-gray-300">
+                    <p className="text-gray-200">
                       Complete a brief assessment to determine your program readiness.
                     </p>
                   </div>
@@ -286,13 +286,13 @@ const Programs = () => {
                 
                 <li className="flex">
                   <div className="mr-4">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-crown-gold text-crown-navy font-bold">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-crown-gold text-crown-navy font-bold text-lg">
                       3
                     </div>
                   </div>
                   <div>
                     <h4 className="text-xl font-medium text-crown-gold mb-2">Interview</h4>
-                    <p className="text-gray-300">
+                    <p className="text-gray-200">
                       Meet with our admissions team to discuss your goals and expectations.
                     </p>
                   </div>
@@ -300,13 +300,13 @@ const Programs = () => {
                 
                 <li className="flex">
                   <div className="mr-4">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-crown-gold text-crown-navy font-bold">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-crown-gold text-crown-navy font-bold text-lg">
                       4
                     </div>
                   </div>
                   <div>
                     <h4 className="text-xl font-medium text-crown-gold mb-2">Enrollment</h4>
-                    <p className="text-gray-300">
+                    <p className="text-gray-200">
                       Receive your acceptance letter and complete registration to begin your journey.
                     </p>
                   </div>
@@ -315,8 +315,8 @@ const Programs = () => {
             </ScrollReveal>
             
             <ScrollReveal direction="left">
-              <div className="p-8 bg-white rounded-xl text-crown-navy shadow-lg">
-                <h3 className="text-2xl font-poppins font-semibold mb-6">Application Requirements</h3>
+              <div className="p-8 bg-white/10 backdrop-blur-sm rounded-xl text-crown-navy shadow-lg">
+                <h3 className="text-2xl font-poppins font-semibold mb-6 text-crown-gold">Application Requirements</h3>
                 
                 <ul className="space-y-4">
                   <li className="flex items-start">
@@ -334,7 +334,7 @@ const Programs = () => {
                     >
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
-                    <span>Completed high school (10+2 or equivalent)</span>
+                    <span className="text-gray-200">Completed high school (10+2 or equivalent)</span>
                   </li>
                   
                   <li className="flex items-start">
@@ -352,7 +352,7 @@ const Programs = () => {
                     >
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
-                    <span>Academic transcripts</span>
+                    <span className="text-gray-200">Academic transcripts</span>
                   </li>
                   
                   <li className="flex items-start">
@@ -370,7 +370,7 @@ const Programs = () => {
                     >
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
-                    <span>Identification documents</span>
+                    <span className="text-gray-200">Identification documents</span>
                   </li>
                   
                   <li className="flex items-start">
@@ -388,7 +388,7 @@ const Programs = () => {
                     >
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
-                    <span>Passport-sized photographs</span>
+                    <span className="text-gray-200">Passport-sized photographs</span>
                   </li>
                   
                   <li className="flex items-start">
@@ -406,7 +406,7 @@ const Programs = () => {
                     >
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
-                    <span>Basic English proficiency</span>
+                    <span className="text-gray-200">Basic English proficiency</span>
                   </li>
                 </ul>
                 

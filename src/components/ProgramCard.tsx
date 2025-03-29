@@ -11,6 +11,9 @@ interface ProgramCardProps {
 }
 
 const ProgramCard = ({ title, image, subjects, brochureLink = "#" }: ProgramCardProps) => {
+  // Fallback image if the provided one fails to load
+  const fallbackImage = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800";
+  
   return (
     <motion.div 
       whileHover={{ y: -10 }}
@@ -22,6 +25,11 @@ const ProgramCard = ({ title, image, subjects, brochureLink = "#" }: ProgramCard
           alt={`${title} - Program Image`}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
           loading="lazy"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null; // Prevent infinite loop
+            target.src = fallbackImage;
+          }}
         />
       </div>
       <div className="p-6">

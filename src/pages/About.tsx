@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
@@ -91,7 +90,7 @@ const About = () => {
         </div>
       </section>
       
-      {/* Timeline Section - FIXED */}
+      {/* Timeline Section */}
       <section className="py-16 bg-crown-bg relative">
         <div className="container mx-auto px-4 md:px-6">
           <SectionTitle 
@@ -199,8 +198,8 @@ const About = () => {
         </div>
       </section>
       
-      {/* Leadership Section */}
-      <section className="py-16 bg-crown-navy text-white">
+      {/* Leadership Section - Updated to prevent blending with footer */}
+      <section className="py-16 bg-crown-navy text-white mb-16">
         <div className="container mx-auto px-4 md:px-6">
           <SectionTitle 
             title="Leadership Message" 

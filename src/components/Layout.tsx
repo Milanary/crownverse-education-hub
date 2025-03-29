@@ -38,6 +38,8 @@ const Layout = () => {
           <Outlet />
         </motion.main>
       </AnimatePresence>
+      {/* Add a spacer div to ensure content doesn't blend with footer */}
+      <div className="h-8"></div>
       <Footer />
     </div>
   );
