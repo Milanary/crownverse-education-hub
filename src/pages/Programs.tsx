@@ -7,83 +7,120 @@ import ProgramCard from "../components/ProgramCard";
 const programsData = [
   {
     id: 1,
-    title: "Diploma in Information Technology",
-    image: "https://images.unsplash.com/photo-1581093588401-9c84f8d002d2",
+    title: "Executive Development Program on Leadership & Innovation",
+    image: "https://images.unsplash.com/photo-1558021212-51b6ecfa0db9",
     subjects: [
-      "Python Programming",
-      "Web Development",
-      "Database Systems",
-      "Networking",
-      "IT Project"
+      "Poland's regulatory and financial system",
+      "Banking & fintech market dynamics",
+      "Transformational leadership in finance",
+      "Decision-making during disruption",
+      "Change & crisis management",
+      "Hybrid work & talent retention",
+      "AI in banking & digital innovation",
+      "Sustainable finance & ESG",
+      "Global leadership exposure"
     ],
-    description: "Gain practical IT skills that are in high demand across industries. Our IT diploma program combines theoretical knowledge with hands-on practice in modern programming languages, web technologies, and system development.",
-    brochureLink: "#"
+    description:
+      "A strategic program for senior executives to explore leadership, innovation, and global finance through immersive modules and institutional visits in Poland. Designed for professionals in banking, insurance, and financial sectors.",
+    brochureLink: "/executive-development-program.pdf"
   },
   {
     id: 2,
-    title: "Diploma in Accounting",
-    image: "https://images.unsplash.com/photo-1588776814546-ec77f4bd21aa",
+    title: "Project Planning and Management (PPM)",
+    image: "https://images.unsplash.com/photo-1605902711622-cfb43c44367d?auto=format&fit=crop&w=800&q=80",
     subjects: [
-      "Financial Accounting",
-      "Taxation",
-      "Cost Management",
-      "Business Law",
-      "QuickBooks"
+      "Project cycle management",
+      "Logical framework approach",
+      "Stakeholder and risk analysis",
+      "Project proposal development",
+      "Field exposure to development agencies"
     ],
-    description: "Develop expertise in financial management, taxation, and accounting software. Our accounting diploma prepares you for careers in financial analysis, corporate accounting, and financial management across multiple sectors.",
+    description:
+      "Designed for professionals in NGOs and development cooperation, this 5-day intensive course builds expertise in planning and managing development projects using practical tools and real-world case studies.",
     brochureLink: "#"
   },
   {
     id: 3,
-    title: "Diploma in Business Management",
-    image: "https://images.unsplash.com/photo-1598257006634-dc9cb4a5411d",
+    title: "Local Economic Development (LED)",
+    image: "https://images.unsplash.com/photo-1560264357-8f76c2f6f153?auto=format&fit=crop&w=800&q=80",
     subjects: [
-      "Organizational Behavior",
-      "HR Management",
-      "Marketing",
-      "Entrepreneurship",
-      "Business Ethics"
+      "Strategies for local economic growth",
+      "Community-based development planning",
+      "SME engagement and empowerment",
+      "Case studies from Italy",
+      "Municipal and agency collaboration"
     ],
-    description: "Master the fundamentals of business management and leadership. This program covers essential business functions including human resources, marketing, entrepreneurship, and strategic planning for today's competitive market.",
+    description:
+      "This 5-day course empowers frontline workers and planners with tools to design and implement impactful local economic development strategies, with examples from Southern Italy.",
     brochureLink: "#"
   },
   {
     id: 4,
-    title: "Diploma in Hospitality & Tourism",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
+    title: "Proposal and Report Writing Workshop",
+    image: "https://images.unsplash.com/photo-1581090700227-1e8e00ef0d98?auto=format&fit=crop&w=800&q=80",
     subjects: [
-      "Tourism Management",
-      "Front Office Ops",
-      "F&B Basics",
-      "CRM",
-      "Event Planning"
+      "Donor expectations and proposal structures",
+      "Logical & results frameworks",
+      "Monitoring and evaluation basics",
+      "Impactful reporting techniques",
+      "Hands-on writing practice"
     ],
-    description: "Prepare for an exciting career in the global hospitality and tourism industry. Learn customer service excellence, event management, tourism operations, and develop the skills needed for hotel and travel industry roles.",
+    description:
+      "This 5-day workshop builds practical skills in writing compelling project proposals and clear, concise reports for development organizations, helping enhance communication and resource mobilization.",
+    brochureLink: "#"
+  },
+  {
+    id: 5,
+    title: "Hotel and Hospitality Management Course",
+    image: "https://images.unsplash.com/photo-1555992336-03a23c90c4a9?auto=format&fit=crop&w=800&q=80",
+    subjects: [
+      "Introduction to Italian cuisine & culture",
+      "Hospitality etiquette & service standards",
+      "Hands-on hotel placement",
+      "Restaurant operations",
+      "Customer service excellence"
+    ],
+    description:
+      "A 3-month immersive hospitality training with Italian language and culture basics, followed by direct placement in hotels and restaurants in Southern Italy for hands-on learning.",
+    brochureLink: "#"
+  },
+  {
+    id: 6,
+    title: "Hotel & Hospitality Management Course (Italy)",
+    image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2",
+    subjects: [
+      "Italian language & culture",
+      "Basics of Italian cuisine",
+      "Hospitality service training",
+      "On-site hotel placements",
+      "Hands-on restaurant experience"
+    ],
+    description:
+      "A 3-month intensive course blending hospitality training with cultural immersion in Italy. Includes foundational skills and two-month placements in hotels and restaurants.",
     brochureLink: "#"
   }
 ];
 
 const Programs = () => {
   const [selectedProgram, setSelectedProgram] = useState<number | null>(null);
-  
-  const handleProgramClick = (id: number) => {
-    setSelectedProgram(id === selectedProgram ? null : id);
+
+  const toggleDropdown = (id: number) => {
+    setSelectedProgram((prev) => (prev === id ? null : id));
   };
-  
+
   return (
     <div className="pt-20">
-      {/* Header Banner */}
+      {/* Hero Section */}
       <section className="relative py-16 md:py-24 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1558021212-51b6ecfa0db9"
-            alt="Crown Institute Programs"
+            alt="Programs"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-crown-navy/70"></div>
         </div>
-        
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center text-white">
+        <div className="relative z-10 text-white text-center container mx-auto px-4 md:px-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -98,24 +135,23 @@ const Programs = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl max-w-2xl mx-auto"
           >
-            Career-focused diplomas designed for employability
+            Career-focused diplomas and global training experiences
           </motion.p>
         </div>
       </section>
-      
-      {/* Programs Section */}
+
+      {/* Grid View */}
       <section className="py-16 bg-crown-bg">
         <div className="container mx-auto px-4 md:px-6">
-          <SectionTitle 
-            title="Accredited Programs" 
+          <SectionTitle
+            title="Accredited Programs"
             subtitle="Choose from our globally recognized diplomas"
             center
           />
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {programsData.map((program, index) => (
               <ScrollReveal key={program.id} delay={index * 0.1}>
-                <ProgramCard 
+                <ProgramCard
                   title={program.title}
                   image={program.image}
                   subjects={program.subjects}
@@ -126,16 +162,15 @@ const Programs = () => {
           </div>
         </div>
       </section>
-      
-      {/* Program Details Section */}
+
+      {/* Accordion View */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <SectionTitle 
-            title="Program Details" 
+          <SectionTitle
+            title="Program Details"
             subtitle="Click on a program to learn more"
             center
           />
-          
           <div className="mt-12 space-y-6">
             {programsData.map((program) => (
               <motion.div
@@ -145,281 +180,91 @@ const Programs = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5 }}
               >
-                <div 
-                  className={`border rounded-lg overflow-hidden cursor-pointer transition-all duration-300 ${
-                    selectedProgram === program.id 
-                      ? 'border-crown-gold shadow-md' 
-                      : 'border-gray-200'
+                <div
+                  className={`border rounded-lg overflow-hidden transition-all duration-300 ${
+                    selectedProgram === program.id
+                      ? "border-crown-gold shadow-md"
+                      : "border-gray-200"
                   }`}
-                  onClick={() => handleProgramClick(program.id)}
+                  onClick={() => toggleDropdown(program.id)}
                 >
                   <div className="p-6 flex flex-col md:flex-row gap-6 items-start">
                     <div className="w-full md:w-1/4">
-                      <div className="aspect-video md:aspect-square rounded-lg overflow-hidden">
-                        <img 
-                          src={program.image} 
-                          alt={program.title} 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <img
+                        src={program.image}
+                        alt={program.title}
+                        className="w-full h-auto rounded-lg object-cover aspect-video md:aspect-square"
+                      />
                     </div>
-                    
                     <div className="flex-1">
                       <h3 className="text-xl font-poppins font-semibold text-crown-navy mb-2">
                         {program.title}
                       </h3>
                       <p className="text-gray-700 mb-4">{program.description}</p>
-                      
                       <div className="flex items-center text-crown-gold">
                         <span className="font-medium mr-2">View Subjects</span>
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          width="20" 
-                          height="20" 
-                          viewBox="0 0 24 24" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          strokeWidth="2" 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round"
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
                           className={`transition-transform duration-300 ${
-                            selectedProgram === program.id ? 'rotate-180' : ''
+                            selectedProgram === program.id ? "rotate-180" : ""
                           }`}
                         >
-                          <polyline points="6 9 12 15 18 9"></polyline>
+                          <polyline points="6 9 12 15 18 9" />
                         </svg>
                       </div>
                     </div>
                   </div>
-                  
-                  <div 
+
+                  {/* Dropdown content */}
+                  <div
                     className={`overflow-hidden transition-all duration-500 ${
-                      selectedProgram === program.id ? 'max-h-96' : 'max-h-0'
+                      selectedProgram === program.id ? "max-h-[500px]" : "max-h-0"
                     }`}
                   >
-                    <div className="p-6 pt-0 md:pl-[calc(25%+1.5rem)]">
-                      <div className="p-4 bg-crown-bg rounded-lg">
-                        <h4 className="font-medium text-crown-navy mb-3">Key Subjects:</h4>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
-                          {program.subjects.map((subject, idx) => (
-                            <li key={idx} className="flex items-center text-gray-700">
-                              <span className="w-1.5 h-1.5 bg-crown-gold rounded-full mr-2"></span>
-                              {subject}
-                            </li>
-                          ))}
-                        </ul>
-                        
-                        <div className="mt-6">
-                          <a
-                            href={program.brochureLink}
-                            download
-                            className="inline-flex items-center text-crown-navy font-medium border-2 border-crown-navy rounded-md px-4 py-2 hover:bg-crown-navy hover:text-white transition-colors duration-300"
+                    <div className="px-6 pb-6 pt-0">
+                      <h4 className="font-medium text-crown-navy mb-3">
+                        Key Subjects:
+                      </h4>
+                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
+                        {program.subjects.map((subject, idx) => (
+                          <li key={idx} className="flex items-center text-gray-700">
+                            <span className="w-1.5 h-1.5 bg-crown-gold rounded-full mr-2" />
+                            {subject}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-6">
+                        <a
+                          href={program.brochureLink}
+                          download
+                          className="inline-flex items-center text-crown-navy font-medium border-2 border-crown-navy rounded-md px-4 py-2 hover:bg-crown-navy hover:text-white transition-colors duration-300"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            className="mr-2"
                           >
-                            <svg 
-                              xmlns="http://www.w3.org/2000/svg" 
-                              width="16" 
-                              height="16" 
-                              viewBox="0 0 24 24" 
-                              fill="none" 
-                              stroke="currentColor" 
-                              strokeWidth="2" 
-                              strokeLinecap="round" 
-                              strokeLinejoin="round"
-                              className="mr-2"
-                            >
-                              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                              <polyline points="7 10 12 15 17 10"></polyline>
-                              <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                            Download Brochure
-                          </a>
-                        </div>
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                          </svg>
+                          Download Brochure
+                        </a>
                       </div>
                     </div>
                   </div>
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Admissions Section */}
-      <section className="py-16 bg-gradient-to-br from-crown-navy to-crown-navy/90 text-white mb-8">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <ScrollReveal direction="right">
-              <SectionTitle 
-                title="Admission Process" 
-                subtitle="Simple steps to join Crown Institute"
-                className="md:mt-0"
-              />
-              
-              <ol className="space-y-6 mt-8">
-                <li className="flex">
-                  <div className="mr-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-crown-gold text-crown-navy font-bold text-lg">
-                      1
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium text-crown-gold mb-2">Application</h4>
-                    <p className="text-gray-200">
-                      Submit your application form online or in person with all required documents.
-                    </p>
-                  </div>
-                </li>
-                
-                <li className="flex">
-                  <div className="mr-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-crown-gold text-crown-navy font-bold text-lg">
-                      2
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium text-crown-gold mb-2">Assessment</h4>
-                    <p className="text-gray-200">
-                      Complete a brief assessment to determine your program readiness.
-                    </p>
-                  </div>
-                </li>
-                
-                <li className="flex">
-                  <div className="mr-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-crown-gold text-crown-navy font-bold text-lg">
-                      3
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium text-crown-gold mb-2">Interview</h4>
-                    <p className="text-gray-200">
-                      Meet with our admissions team to discuss your goals and expectations.
-                    </p>
-                  </div>
-                </li>
-                
-                <li className="flex">
-                  <div className="mr-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-crown-gold text-crown-navy font-bold text-lg">
-                      4
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium text-crown-gold mb-2">Enrollment</h4>
-                    <p className="text-gray-200">
-                      Receive your acceptance letter and complete registration to begin your journey.
-                    </p>
-                  </div>
-                </li>
-              </ol>
-            </ScrollReveal>
-            
-            <ScrollReveal direction="left">
-              <div className="p-8 bg-white/10 backdrop-blur-sm rounded-xl text-crown-navy shadow-lg">
-                <h3 className="text-2xl font-poppins font-semibold mb-6 text-crown-gold">Application Requirements</h3>
-                
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="20" 
-                      height="20" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                      className="text-crown-gold mr-3 mt-1"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span className="text-gray-200">Completed high school (10+2 or equivalent)</span>
-                  </li>
-                  
-                  <li className="flex items-start">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="20" 
-                      height="20" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                      className="text-crown-gold mr-3 mt-1"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span className="text-gray-200">Academic transcripts</span>
-                  </li>
-                  
-                  <li className="flex items-start">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="20" 
-                      height="20" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                      className="text-crown-gold mr-3 mt-1"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span className="text-gray-200">Identification documents</span>
-                  </li>
-                  
-                  <li className="flex items-start">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="20" 
-                      height="20" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                      className="text-crown-gold mr-3 mt-1"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span className="text-gray-200">Passport-sized photographs</span>
-                  </li>
-                  
-                  <li className="flex items-start">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="20" 
-                      height="20" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                      className="text-crown-gold mr-3 mt-1"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span className="text-gray-200">Basic English proficiency</span>
-                  </li>
-                </ul>
-                
-                <div className="mt-8">
-                  <a
-                    href="/contact"
-                    className="inline-flex items-center bg-crown-gold text-crown-navy font-medium rounded-md px-6 py-3 hover:bg-opacity-90 transition-colors duration-300"
-                  >
-                    Apply Now
-                  </a>
-                </div>
-              </div>
-            </ScrollReveal>
           </div>
         </div>
       </section>

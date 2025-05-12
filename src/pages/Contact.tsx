@@ -1,5 +1,4 @@
-
-// Modify or create this file to add the proper Formspree integration
+// Modify or create this file to add the proper Formspree integration with improved dropdown styling
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Mail, Phone, Clock, Send } from "lucide-react";
@@ -19,7 +18,7 @@ const Contact = () => {
       const form = e.currentTarget;
       const formData = new FormData(form);
       
-      const response = await fetch("https://formspree.io/f/xpzvveoz", {
+      const response = await fetch("https://formspree.io/f/xrbpally", {
         method: "POST",
         body: formData,
         headers: {
@@ -121,7 +120,7 @@ const Contact = () => {
                     onSubmit={handleSubmit} 
                     method="POST"
                     action="https://formspree.io/f/xpzvveoz"
-                    accept-charset="UTF-8"
+                    acceptCharset="UTF-8"
                     className="space-y-6"
                   >
                     <div>
@@ -159,12 +158,12 @@ const Contact = () => {
                       />
                     </div>
                     
-                    <div>
+                    <div className="relative">
                       <label htmlFor="program" className="block text-gray-700 font-medium mb-2">Interested Program</label>
                       <select 
                         id="program" 
                         name="program" 
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-crown-gold/50 focus:border-crown-gold bg-white"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-crown-gold/50 focus:border-crown-gold bg-white appearance-none"
                       >
                         <option value="">Select a program</option>
                         <option value="IT">Diploma in Information Technology</option>
@@ -172,6 +171,11 @@ const Contact = () => {
                         <option value="Business">Diploma in Business Management</option>
                         <option value="Tourism">Diploma in Hospitality & Tourism</option>
                       </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                        <svg className="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L10 9.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z" clipRule="evenodd" />
+                        </svg>
+                      </div>
                     </div>
                     
                     <div>
