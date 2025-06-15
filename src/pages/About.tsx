@@ -2,58 +2,52 @@ import { motion } from "framer-motion";
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
 import {
-  Lightbulb,
-  Code,
-  FileText,
-  BookOpenCheck,
-  BarChart4,
-  ClipboardList,
-  Users2,
-  Globe,
-  ShieldCheck,
+  Lightbulb, Code, FileText, BookOpenCheck, BarChart4, ClipboardList,
+  Users2, Globe, ShieldCheck, ChevronDown, ChevronUp
 } from "lucide-react";
+import { useState } from "react";
 
 const About = () => {
   const expertiseItems = [
     {
       icon: <Lightbulb className="text-crown-navy w-6 h-6" />,
       year: "01",
-      title: "Skill Training for Employability",
-      description: "Empowering youth with job-ready technical and vocational training aligned with industry needs.",
+      title: "IT Services & Digital Innovation",
+      description: "Offering custom software, websites, marketing, and tech consulting to drive business results.",
     },
     {
       icon: <Code className="text-crown-navy w-6 h-6" />,
       year: "02",
-      title: "Information Technology & Digital Services",
-      description: "Delivering future-ready IT education including software, networking, and digital transformation tools.",
+      title: "Professional & Executive Courses",
+      description: "Delivering certified programs that upskill professionals in leadership, tech, and management.",
     },
     {
       icon: <FileText className="text-crown-navy w-6 h-6" />,
       year: "03",
-      title: "Accounting and Financial Literacy",
-      description: "Building competency in finance, bookkeeping, taxation, and accounting systems with practical tools.",
+      title: "Training & Capacity Building",
+      description: "Enhancing institutional and workforce capacities through workshops, consulting, and coaching.",
     },
     {
       icon: <BookOpenCheck className="text-crown-navy w-6 h-6" />,
       year: "04",
-      title: "Higher Education Programs",
-      description: "Offering academic diplomas and degrees through partnerships with international universities.",
+      title: "Business Consulting Services",
+      description: "Strategic solutions in project design, M&E, entrepreneurship, and digital transformation.",
     },
     {
       icon: <BarChart4 className="text-crown-navy w-6 h-6" />,
       year: "05",
-      title: "Entrepreneurship & Business Development",
-      description: "Nurturing innovation and self-employment through incubation, mentoring, and financial guidance.",
+      title: "Academic Collaboration",
+      description: "Working with global universities for higher education pathways and academic exchanges.",
     },
     {
       icon: <ClipboardList className="text-crown-navy w-6 h-6" />,
       year: "06",
-      title: "Research & Project Intervention",
-      description: "Engaging in evidence-based studies and monitoring & evaluation of development programs.",
+      title: "Project Management & Research",
+      description: "Delivering evidence-based studies, training, and sustainable development interventions.",
     },
   ];
 
-  const affiliations = [
+  const partnerships = [
     "Crown Institute of Higher Education (CIHE), Sydney",
     "University of Pavia, Italy",
     "Social Media Culture University, Toruń, Poland",
@@ -65,6 +59,23 @@ const About = () => {
     "Unnati, a national NGO, Kathmandu",
   ];
 
+  const faqs = [
+    {
+      question: "What type of IT services do you offer?",
+      answer: "We offer web and app development, digital marketing, custom software solutions, graphic design, and IT consulting."
+    },
+    {
+      question: "Are your training programs certified?",
+      answer: "Yes, our professional courses come with local and international certifications aligned with industry needs."
+    },
+    {
+      question: "Do you partner with global institutions?",
+      answer: "Yes, we work with universities and NGOs across Europe, Australia, and Nepal for education and development programs."
+    }
+  ];
+
+  const [openIndex, setOpenIndex] = useState(null);
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -75,7 +86,7 @@ const About = () => {
             alt="About Crown Institute"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-crown-navy/70"></div>
+          <div className="absolute inset-0 bg-crown-navy/70" />
         </div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center text-white">
           <motion.h1
@@ -107,13 +118,14 @@ const About = () => {
           />
           <div className="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
             <p>
-              Crown Institute is a visionary venture driven by a team of educators, entrepreneurs, and technologists to create meaningful impact through skills, higher education, consultancy, and innovation. We offer programs that meet global market demands and foster personal and institutional transformation.
+              Crown Institute is a multidisciplinary hub providing IT services, professional education, and consulting
+              solutions. With a team of experts, we drive value across development, business, and technology sectors.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Vision Mission Objectives */}
+      {/* Vision, Mission, Objectives */}
       <section className="py-16 bg-crown-bg text-crown-navy">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -121,35 +133,29 @@ const About = () => {
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <ShieldCheck className="w-8 h-8 mx-auto text-crown-gold mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Our Vision</h3>
-                <p>
-                  To become a global leader in skills, education, innovation, and consultancy services—driving transformative change.
-                </p>
+                <p>To become a regional leader in IT, skills, and consulting solutions for lasting impact.</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <Users2 className="w-8 h-8 mx-auto text-crown-gold mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
-                <p>
-                  Deliver cutting-edge programs that empower individuals and organizations to thrive and innovate in a rapidly evolving world.
-                </p>
+                <p>Deliver client-centric services that empower individuals and institutions to thrive globally.</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <Globe className="w-8 h-8 mx-auto text-crown-gold mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Our Objectives</h3>
-                <p>
-                  Offer vocational & higher education, consulting, entrepreneurship support, and global partnerships to meet international workforce needs.
-                </p>
+                <p>Promote tech adoption, entrepreneurship, and international collaboration for capacity building.</p>
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Our Areas of Expertise (Timeline Style) */}
-      <section className="py-16 bg-white relative">
+      {/* Areas of Expertise – Timeline Format */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <SectionTitle
             title="Our Areas of Expertise"
@@ -158,21 +164,9 @@ const About = () => {
           />
           <div className="relative mt-12 max-w-4xl mx-auto">
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-crown-gold/30 z-0"></div>
-
             {expertiseItems.map((item, index) => (
               <div key={index} className="relative z-10 mb-12 last:mb-0">
                 <div className={`md:flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
-                  {/* Mobile Year */}
-                  <div className="md:hidden flex justify-center mb-6">
-                    <div className="flex flex-col items-center">
-                      <div className="bg-crown-navy text-white text-lg font-bold py-2 px-4 rounded-md">
-                        {item.year}
-                      </div>
-                      <div className="h-8 w-1 bg-crown-gold"></div>
-                    </div>
-                  </div>
-
-                  {/* Content */}
                   <div className="md:w-5/12">
                     <motion.div
                       whileHover={{ y: -5 }}
@@ -187,8 +181,6 @@ const About = () => {
                       <p className="text-gray-700">{item.description}</p>
                     </motion.div>
                   </div>
-
-                  {/* Desktop Year */}
                   <div className="hidden md:block md:w-2/12 flex justify-center">
                     <div className="flex flex-col items-center">
                       <div className="bg-crown-navy text-white font-bold py-2 px-4 rounded-md">
@@ -197,7 +189,6 @@ const About = () => {
                       <div className="h-4 w-4 bg-crown-gold rounded-full mt-2 border-4 border-white"></div>
                     </div>
                   </div>
-
                   <div className="hidden md:block md:w-5/12"></div>
                 </div>
               </div>
@@ -205,50 +196,54 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Affiliations & Partnerships - Auto-Scroll */}
+{/* FAQ Section */}
+<section className="py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <SectionTitle title="Frequently Asked Questions" subtitle="Quick answers to common queries" center />
+          <div className="max-w-3xl mx-auto mt-10 space-y-4">
+            {faqs.map((faq, idx) => (
+              <div key={idx} className="border rounded-md shadow p-4">
+                <button
+                  onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                  className="flex items-center justify-between w-full text-left text-crown-navy font-medium text-lg"
+                >
+                  {faq.question}
+                  {openIndex === idx ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                </button>
+                {openIndex === idx && (
+                  <p className="mt-2 text-gray-700">{faq.answer}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Partnerships & Networks */}
       <section className="py-16 bg-crown-bg">
         <div className="container mx-auto px-4 md:px-6">
-          <SectionTitle
-            title="Affiliations & Partnerships"
-            subtitle="Collaborating for greater impact"
-            center
-          />
+          <SectionTitle title="Partnerships & Networks" subtitle="Collaborating for global success" center />
           <div className="overflow-hidden relative mt-12">
-            <div
-              className="flex animate-scroll-slow space-x-8 items-center"
-              style={{ animation: "scroll-left 40s linear infinite" }}
-            >
-              {affiliations.map((name, index) => (
-                <div
-                  key={index}
-                  className="min-w-[200px] flex flex-col items-center text-center bg-white rounded-lg shadow-md px-4 py-6 mx-2"
-                >
-                  <img
-                    src="https://via.placeholder.com/80"
-                    alt={name}
-                    className="w-16 h-16 object-contain mb-3"
-                  />
+            <div className="flex animate-scroll-slow space-x-8 items-center" style={{ animation: "scroll-left 40s linear infinite" }}>
+              {partnerships.map((name, index) => (
+                <div key={index} className="min-w-[200px] flex flex-col items-center text-center bg-white rounded-lg shadow-md px-4 py-6 mx-2">
+                  <img src="https://via.placeholder.com/80" alt={name} className="w-16 h-16 object-contain mb-3" />
                   <p className="text-crown-navy font-medium text-sm">{name}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
-
         <style jsx>{`
           @keyframes scroll-left {
-            0% {
-              transform: translateX(0%);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
           }
         `}</style>
       </section>
+
+      
     </div>
   );
 };
-//done
+
 export default About;

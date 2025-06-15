@@ -1,28 +1,29 @@
-
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-crown-navy text-white pt-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Institute Info */}
           <div>
-            <div className="flex items-center mb-4">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                <span className="text-crown-navy font-poppins font-bold text-lg">CI</span>
-              </div>
-              <h3 className="ml-2 text-xl font-poppins font-bold">
-                <span className="text-white">Crown</span>
-                <span className="text-crown-gold"> Institute</span>
-              </h3>
-            </div>
+          <div className="flex items-center mb-4">
+  <div className="bg-white p-2 rounded-md shadow-md">
+    <img
+      src="/logo.png"
+      alt="Crown Institute Logo"
+      className="w-14 h-14 md:w-16 md:h-16 object-contain"
+    />
+  </div>
+  
+</div>
+
             <p className="text-gray-300 mt-4">
-              Providing globally recognized, career-focused education for students who aim to excel in today's competitive job market.
+              Crown Institute delivers expert-led IT services, consulting, professional training, and capacity building — empowering organizations and individuals to thrive in a digital-first world.
             </p>
           </div>
 
@@ -55,16 +56,22 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 text-crown-gold mt-1 flex-shrink-0" />
-                <span className="text-gray-300">Crown Institute, Sifal, Kathmandu, Nepal</span>
+                <span className="text-gray-300">Crown Institute, Maitighar, Kathmandu, Nepal</span>
               </li>
               <li>
-                <a href="mailto:aryalmilan23@gmail.com" className="flex items-center text-gray-300 hover:text-crown-gold transition-colors duration-200">
+                <a
+                  href="mailto:info@crowninstitutes.com"
+                  className="flex items-center text-gray-300 hover:text-crown-gold transition-colors duration-200"
+                >
                   <Mail className="w-5 h-5 mr-3 text-crown-gold flex-shrink-0" />
-                  aryalmilan23@gmail.com
+                  info@crowninstitutes.com
                 </a>
               </li>
               <li>
-                <a href="tel:+9771234567" className="flex items-center text-gray-300 hover:text-crown-gold transition-colors duration-200">
+                <a
+                  href="tel:+9771234567"
+                  className="flex items-center text-gray-300 hover:text-crown-gold transition-colors duration-200"
+                >
                   <Phone className="w-5 h-5 mr-3 text-crown-gold flex-shrink-0" />
                   +977-1-1234567
                 </a>
