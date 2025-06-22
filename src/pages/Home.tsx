@@ -220,17 +220,7 @@ const NewsSection = () => {
 
 // CONTINUED BELOW – tell me to continue for Affiliated, Testimonials, and CTA.
 const AffiliatedSection = () => {
-  const partnerships = [
-    "Crown Institute of Higher Education (CIHE), Sydney",
-    "University of Pavia, Italy",
-    "Social Media Culture University, Toruń, Poland",
-    "Cooperation and Development Network of Pavia",
-    "Crown Institute of Business and Technology (CIBT), Sydney",
-    "MU Institute of Cooperation and Development (MICD), Kathmandu",
-    "Kathmandu Technical School, Kathmandu",
-    "Resources Himalaya Foundation (RHF), Lalitpur",
-    "Unnati, a national NGO, Kathmandu",
-  ];
+  const images = ["/Partner1.png", "/Partner2.png", "/Partner3.png"];
 
   return (
     <section className="py-16 bg-crown-bg">
@@ -240,27 +230,25 @@ const AffiliatedSection = () => {
           subtitle="Collaborating for global success"
           center
         />
+
         <div className="overflow-hidden relative mt-12">
           <div
-            className="flex animate-scroll-slow space-x-8 items-center"
+            className="flex animate-scroll-slow items-center"
             style={{ animation: "scroll-left 40s linear infinite" }}
           >
-            {partnerships.map((name, index) => (
-              <div
-                key={index}
-                className="min-w-[200px] flex flex-col items-center text-center bg-white rounded-lg shadow-md px-4 py-6 mx-2"
-              >
+            {[...images, ...images].map((src, idx) => (
+              <div key={idx} className="min-w-[600px]">
                 <img
-                  src="https://via.placeholder.com/80"
-                  alt={name}
-                  className="w-16 h-16 object-contain mb-3"
+                  src={src}
+                  alt={`Partner group ${idx + 1}`}
+                  className="w-[600px] h-auto object-contain rounded shadow-md"
                 />
-                <p className="text-crown-navy font-medium text-sm">{name}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
+
       <style jsx>{`
         @keyframes scroll-left {
           0% {
@@ -274,6 +262,9 @@ const AffiliatedSection = () => {
     </section>
   );
 };
+
+
+
 
 const ServicesSection = () => {
   const services = [

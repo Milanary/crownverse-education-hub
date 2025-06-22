@@ -31,9 +31,11 @@ const Navbar = ({ isScrolled, isHomePage }: NavbarProps) => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-8 items-center justify-center flex-1">
           <NavLink to="/" label="Home" />
-          <NavLink to="/about" label="Crown Institute" />
+          <NavLink to="/about" label="About Us" />
           <NavLink to="/IT-services" label="IT-Services" />
+          <NavLink to="/AccountingServices" label="Accounting Services" />
           <NavLink to="/programs" label="Professional Courses" />
+          
 
           {/* Services Dropdown */}
           <div className="relative group">
@@ -103,11 +105,13 @@ const NavLink = ({ to, label }: NavLinkProps) => {
 const AnimatedMobileMenu = ({ isOpen }: { isOpen: boolean }) => {
   const links = [
     { to: "/", label: "Home" },
-    { to: "/about", label: "Crown Institute" },
+    { to: "/about", label: "About US" },
     { to: "/it-services", label: "IT-Services" },
+    { to: "/", label: "Accounting Services" },
     { to: "/programs", label: "Professional Courses" },
     { to: "/training", label: "Training & Capacity Building" },
     { to: "/consulting", label: "Consulting Services" },
+    
   ];
 
   return (
