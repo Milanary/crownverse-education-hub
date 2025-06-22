@@ -107,7 +107,7 @@ const AnimatedMobileMenu = ({ isOpen }: { isOpen: boolean }) => {
     { to: "/", label: "Home" },
     { to: "/about", label: "About US" },
     { to: "/it-services", label: "IT-Services" },
-    { to: "/", label: "Accounting Services" },
+    { to: "/AccountingServices", label: "Accounting Services" },
     { to: "/programs", label: "Professional Courses" },
     { to: "/training", label: "Training & Capacity Building" },
     { to: "/consulting", label: "Consulting Services" },
