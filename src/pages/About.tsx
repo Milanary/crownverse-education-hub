@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"; 
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
 import {
@@ -6,6 +6,7 @@ import {
   Users2, Globe, ShieldCheck, ChevronDown, ChevronUp
 } from "lucide-react";
 import { useState } from "react";
+import AffiliatedSection from "../components/AffiliatedSection";
 
 const About = () => {
   const expertiseItems = [
@@ -47,18 +48,6 @@ const About = () => {
     },
   ];
 
-  const partnerships = [
-    "Crown Institute of Higher Education (CIHE), Sydney",
-    "University of Pavia, Italy",
-    "Social Media Culture University, Toruń, Poland",
-    "Cooperation and Development Network of Pavia",
-    "Crown Institute of Business and Technology (CIBT), Sydney",
-    "MU Institute of Cooperation and Development (MICD), Kathmandu",
-    "Kathmandu Technical School, Kathmandu",
-    "Resources Himalaya Foundation (RHF), Lalitpur",
-    "Unnati, a national NGO, Kathmandu",
-  ];
-
   const faqs = [
     {
       question: "What type of IT services do you offer?",
@@ -74,7 +63,7 @@ const About = () => {
     }
   ];
 
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <div className="pt-20">
@@ -108,7 +97,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Intro */}
+      {/* About Intro */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <SectionTitle
@@ -154,7 +143,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Areas of Expertise – Timeline Format */}
+      {/* Areas of Expertise */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <SectionTitle
@@ -196,8 +185,9 @@ const About = () => {
           </div>
         </div>
       </section>
-{/* FAQ Section */}
-<section className="py-16 bg-white">
+
+      {/* FAQs */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <SectionTitle title="Frequently Asked Questions" subtitle="Quick answers to common queries" center />
           <div className="max-w-3xl mx-auto mt-10 space-y-4">
@@ -218,30 +208,9 @@ const About = () => {
           </div>
         </div>
       </section>
-      {/* Partnerships & Networks */}
-      <section className="py-16 bg-crown-bg">
-        <div className="container mx-auto px-4 md:px-6">
-          <SectionTitle title="Partnerships & Networks" subtitle="Collaborating for global success" center />
-          <div className="overflow-hidden relative mt-12">
-            <div className="flex animate-scroll-slow space-x-8 items-center" style={{ animation: "scroll-left 40s linear infinite" }}>
-              {partnerships.map((name, index) => (
-                <div key={index} className="min-w-[200px] flex flex-col items-center text-center bg-white rounded-lg shadow-md px-4 py-6 mx-2">
-                  <img src="https://via.placeholder.com/80" alt={name} className="w-16 h-16 object-contain mb-3" />
-                  <p className="text-crown-navy font-medium text-sm">{name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        <style jsx>{`
-          @keyframes scroll-left {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-          }
-        `}</style>
-      </section>
 
-      
+      {/* Partnerships & Networks Section */}
+      <AffiliatedSection />
     </div>
   );
 };

@@ -6,6 +6,8 @@ import {
 import ScrollReveal from "../components/ScrollReveal";
 import SectionTitle from "../components/SectionTitle";
 import { Link } from "react-router-dom";
+import AffiliatedSection from "../components/AffiliatedSection";
+
 
 const services = [
   {
@@ -221,6 +223,7 @@ const AccountingServices = () => {
           </ScrollReveal>
         </div>
       </section>
+      <AffiliatedSection />
     </div>
   );
 };
