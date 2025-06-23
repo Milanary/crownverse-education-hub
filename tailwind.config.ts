@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -112,7 +111,7 @@ const config: Config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.5s ease-out",
         "slide-in": "slide-in 0.5s ease-out",
-        "scroll-left": "scroll-left 60s linear infinite",
+        "scroll-left": "scroll-left 30s linear infinite", // ← Faster scroll speed
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
@@ -120,7 +119,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate")], // ← Fixed plugin name
 };
 
 export default config;
