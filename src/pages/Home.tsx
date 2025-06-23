@@ -7,17 +7,16 @@ import {
 } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
-import AnimatedCounter from "../components/AnimatedCounter";
 import TestimonialCard from "../components/TestimonialCard";
+import AffiliatedSection from "../components/AffiliatedSection";
+
 
 const Home = () => {
   return (
     <div>
       <HeroSection />
-
       <FeatureSection />
       <NewsSection />
-      <AffiliatedSection />
       <ServicesSection />
       <TestimonialsSection />
       <CTASection />
@@ -213,55 +212,12 @@ const NewsSection = () => {
           </button>
         </div>
       </div>
+       <AffiliatedSection />
     </section>
   );
 };
 
 
-// CONTINUED BELOW – tell me to continue for Affiliated, Testimonials, and CTA.
-const AffiliatedSection = () => {
-  const images = ["/Partner1.png", "/Partner2.png", "/Partner3.png"];
-
-  return (
-    <section className="py-16 bg-crown-bg">
-      <div className="container mx-auto px-4 md:px-6">
-        <SectionTitle
-          title="Partnerships & Networks"
-          subtitle="Collaborating for global success"
-          center
-        />
-
-        <div className="overflow-hidden relative mt-12">
-          <div
-            className="flex animate-scroll-slow items-center"
-            style={{ animation: "scroll-left 10s linear infinite" }}
-          >
-            {[...images, ...images].map((src, idx) => (
-              <div key={idx} className="min-w-[600px]">
-                <img
-                  src={src}
-                  alt={`Partner group ${idx + 1}`}
-                  className="w-[600px] h-auto object-contain rounded shadow-md"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <style jsx>{`
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
-    </section>
-  );
-};
 
 
 
@@ -310,9 +266,13 @@ const ServicesSection = () => {
               </div>
             </ScrollReveal>
           ))}
+           
         </div>
+        
       </div>
+       
     </section>
+    
   );
 };
 
@@ -507,6 +467,7 @@ const CTASection = () => {
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-crown-gold"
                   placeholder="Briefly describe what you’re looking for..."
                 />
+                 
               </div>
               <button
                 type="submit"
@@ -516,6 +477,7 @@ const CTASection = () => {
               </button>
             </form>
           </ScrollReveal>
+           
         </div>
       </div>
     </section>
