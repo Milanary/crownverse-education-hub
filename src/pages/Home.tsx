@@ -234,7 +234,7 @@ const AffiliatedSection = () => {
         <div className="overflow-hidden relative mt-12">
           <div
             className="flex animate-scroll-slow items-center"
-            style={{ animation: "scroll-left 30s linear infinite" }}
+            style={{ animation: "scroll-left 10s linear infinite" }}
           >
             {[...images, ...images].map((src, idx) => (
               <div key={idx} className="min-w-[600px]">

@@ -111,7 +111,7 @@ const config: Config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.5s ease-out",
         "slide-in": "slide-in 0.5s ease-out",
-        "scroll-left": "scroll-left 30s linear infinite", // ← Faster scroll speed
+        "scroll-left": "scroll-left 20s linear infinite", // ← Faster scroll speed
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
