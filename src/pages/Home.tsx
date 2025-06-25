@@ -212,11 +212,12 @@ const NewsSection = () => {
           </button>
         </div>
       </div>
-       <AffiliatedSection />
+      
     </section>
+    
   );
 };
-
+ 
 
 
 
@@ -266,14 +267,22 @@ const ServicesSection = () => {
               </div>
             </ScrollReveal>
           ))}
-           
+       
+
         </div>
         
+
+        
       </div>
+      <AffiliatedSection />
+
+      
+
        
     </section>
     
   );
+  
 };
 
 const TestimonialsSection = () => {
@@ -371,9 +380,12 @@ const TestimonialsSection = () => {
                 aria-label={`View testimonial ${index + 1}`}
               />
             ))}
+            
+
           </div>
         </div>
       </div>
+      
     </section>
   );
 };
@@ -479,6 +491,7 @@ const CTASection = () => {
           </ScrollReveal>
            
         </div>
+        
       </div>
     </section>
   );
