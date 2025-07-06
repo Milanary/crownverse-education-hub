@@ -167,14 +167,14 @@ const ITServices = () => {
       <section className="py-16 bg-crown-bg text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <SectionTitle
-            title="Pricing & Engagement"
+            title="Our Plans and Services"
             subtitle="Flexible plans to suit your business"
             center
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="bg-white text-crown-navy rounded-lg p-6 shadow">
               <h3 className="text-xl font-bold mb-2">Starter Plan</h3>
-              <p className="text-2xl font-semibold mb-4">$499</p>
+              <p className="text-2xl font-semibold mb-4"></p>
               <ul className="space-y-2">
                 <li>✔ Website setup</li>
                 <li>✔ Basic SEO</li>
@@ -184,7 +184,7 @@ const ITServices = () => {
             </div>
             <div className="bg-white text-crown-navy rounded-lg p-6 shadow">
               <h3 className="text-xl font-bold mb-2">Growth Plan</h3>
-              <p className="text-2xl font-semibold mb-4">$899</p>
+              <p className="text-2xl font-semibold mb-4"></p>
               <ul className="space-y-2">
                 <li>✔ Full-stack website</li>
                 <li>✔ Advanced SEO</li>

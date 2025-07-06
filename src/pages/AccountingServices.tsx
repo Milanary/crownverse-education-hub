@@ -166,14 +166,14 @@ const AccountingServices = () => {
       <section className="py-16 bg-crown-bg text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <SectionTitle
-            title="Pricing & Engagement"
+            title="Our Plans and Services"
             subtitle="Flexible packages for every stage of your financial journey"
             center
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="bg-white text-crown-navy rounded-lg p-6 shadow">
               <h3 className="text-xl font-bold mb-2">Basic Plan</h3>
-              <p className="text-2xl font-semibold mb-4">$299</p>
+              <p className="text-2xl font-semibold mb-4"></p>
               <ul className="space-y-2">
                 <li>✔ Monthly bookkeeping</li>
                 <li>✔ Tax filing support</li>
@@ -183,7 +183,7 @@ const AccountingServices = () => {
             </div>
             <div className="bg-white text-crown-navy rounded-lg p-6 shadow">
               <h3 className="text-xl font-bold mb-2">Business Plan</h3>
-              <p className="text-2xl font-semibold mb-4">$649</p>
+              <p className="text-2xl font-semibold mb-4"></p>
               <ul className="space-y-2">
                 <li>✔ Full financial reporting</li>
                 <li>✔ Quarterly tax planning</li>
