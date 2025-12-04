@@ -73,7 +73,7 @@ const Footer = () => {
                   className="flex items-center text-gray-300 hover:text-crown-gold transition-colors duration-200"
                 >
                   <Phone className="w-5 h-5 mr-3 text-crown-gold flex-shrink-0" />
-                  977 9851418550
+                  977 9869479419
                 </a>
               </li>
               <li className="flex items-start">

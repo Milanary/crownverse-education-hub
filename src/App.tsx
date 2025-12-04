@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ITServices from "./pages/IT-services";
 import AccountingServices from "./pages/AccountingServices";
+import OdooERP from "./pages/Odoo-ERP";
 
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
             <Route path="IT-services" element={<ITServices/>}/>
+            <Route path="odoo-erp" element={<OdooERP/>}/>
             <Route path="AccountingServices" element={<AccountingServices/>}/>
           </Route>
         </Routes>
