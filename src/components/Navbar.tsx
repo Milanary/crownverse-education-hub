@@ -33,6 +33,7 @@ const Navbar = ({ isScrolled, isHomePage }: NavbarProps) => {
           <NavLink to="/" label="Home" />
           <NavLink to="/about" label="About Us" />
           <NavLink to="/IT-services" label="IT-Services" />
+          <NavLink to = '/odoo-erp' label = "Odoo ERP" />
           <NavLink to="/AccountingServices" label="Accounting Services" />
           <NavLink to="/programs" label="Professional Courses" />
           
@@ -107,6 +108,7 @@ const AnimatedMobileMenu = ({ isOpen }: { isOpen: boolean }) => {
     { to: "/", label: "Home" },
     { to: "/about", label: "About US" },
     { to: "/it-services", label: "IT-Services" },
+    { to: "/odoo-erp", label: "Odoo ERP" },
     { to: "/AccountingServices", label: "Accounting Services" },
     { to: "/programs", label: "Professional Courses" },
     { to: "/training", label: "Training & Capacity Building" },
