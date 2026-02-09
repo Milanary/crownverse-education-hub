@@ -228,7 +228,7 @@ const BITDualDegree = () => {
       </section>
 
       {/* Educational Resources & CTA */}
-      <section className="py-16 bg-crown-navy">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -236,10 +236,10 @@ const BITDualDegree = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-crown-navy mb-6">
               Curriculum & Admissions
             </h2>
-            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
               Review the detailed course structure, admission requirements, and scholarship opportunities in our comprehensive program brochure.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -257,7 +257,7 @@ const BITDualDegree = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-crown-navy transition-colors duration-300"
+                  className="bg-transparent border-2 border-crown-navy text-crown-navy px-8 py-3 rounded-md font-semibold hover:bg-crown-navy hover:text-white transition-colors duration-300"
                 >
                   Visit KU Website
                 </motion.button>
