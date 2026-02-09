@@ -35,8 +35,7 @@ const Navbar = ({ isScrolled, isHomePage }: NavbarProps) => {
           <NavLink to="/IT-services" label="IT-Services" />
           <NavLink to = '/odoo-erp' label = "Odoo ERP" />
           <NavLink to="/AccountingServices" label="Accounting Services" />
-          <NavLink to="/programs" label="Professional Courses" />
-          
+          <NavLink to="/bit-dual-degree" label="BIT dual degree programme" />
 
           {/* Services Dropdown */}
           <div className="relative group">
@@ -44,6 +43,12 @@ const Navbar = ({ isScrolled, isHomePage }: NavbarProps) => {
               Services <ChevronDown className="ml-1 w-4 h-4" />
             </div>
             <div className="absolute top-full mt-2 left-0 w-64 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-40">
+              <Link
+                to="/programs"
+                className="block px-4 py-3 text-crown-navy text-[16px] font-medium hover:bg-crown-bg hover:text-crown-gold"
+              >
+                Professional Courses
+              </Link>
               <Link
                 to="/training"
                 className="block px-4 py-3 text-crown-navy text-[16px] font-medium hover:bg-crown-bg hover:text-crown-gold"
@@ -110,10 +115,10 @@ const AnimatedMobileMenu = ({ isOpen }: { isOpen: boolean }) => {
     { to: "/it-services", label: "IT-Services" },
     { to: "/odoo-erp", label: "Odoo ERP" },
     { to: "/AccountingServices", label: "Accounting Services" },
+    { to: "/bit-dual-degree", label: "BIT dual degree programme" },
     { to: "/programs", label: "Professional Courses" },
     { to: "/training", label: "Training & Capacity Building" },
     { to: "/consulting", label: "Consulting Services" },
-    
   ];
 
   return (
