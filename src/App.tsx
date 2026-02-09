@@ -13,6 +13,9 @@ import NotFound from "./pages/NotFound";
 import ITServices from "./pages/IT-services";
 import AccountingServices from "./pages/AccountingServices";
 import OdooERP from "./pages/Odoo-ERP";
+import BITDualDegree from "./pages/BITDualDegree";
+import Consulting from "./pages/Consulting";
+import PopupModal from "./components/PopupModal";
 
 
 const queryClient = new QueryClient();
@@ -31,8 +34,11 @@ const App = () => (
             <Route path="IT-services" element={<ITServices/>}/>
             <Route path="odoo-erp" element={<OdooERP/>}/>
             <Route path="AccountingServices" element={<AccountingServices/>}/>
+            <Route path="bit-dual-degree" element={<BITDualDegree/>}/>
+            <Route path="consulting" element={<Consulting/>}/>
           </Route>
         </Routes>
+        <PopupModal />
         <Toaster />
         <Sonner />
       </TooltipProvider>
