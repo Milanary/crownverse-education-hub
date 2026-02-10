@@ -1,22 +1,36 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, Loader2 } from "lucide-react";
 
 const PopupModal = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     // Auto-show popup on first visit (session-based)
     const hasSeenPopup = sessionStorage.getItem("hasSeenPopup");
     
     if (!hasSeenPopup) {
-      // Delay the popup slightly for better UX
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-        sessionStorage.setItem("hasSeenPopup", "true");
-      }, 1000);
+      // Preload the image before showing the popup
+      const img = new Image();
+      img.src = "/popup.png";
       
-      return () => clearTimeout(timer);
+      img.onload = () => {
+        setImageLoaded(true);
+        // Show popup only after image is loaded
+        const timer = setTimeout(() => {
+          setIsOpen(true);
+          sessionStorage.setItem("hasSeenPopup", "true");
+        }, 500);
+        
+        return () => clearTimeout(timer);
+      };
+      
+      img.onerror = () => {
+        setImageError(true);
+        console.error("Failed to load popup image");
+      };
     }
   }, []);
 
@@ -24,9 +38,14 @@ const PopupModal = () => {
     setIsOpen(false);
   };
 
+  // Don't render anything if image failed to load
+  if (imageError) {
+    return null;
+  }
+
   return (
     <AnimatePresence>
-      {isOpen && (
+      {isOpen && imageLoaded && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -43,7 +62,7 @@ const PopupModal = () => {
             className="relative bg-white rounded-xl shadow-2xl max-w-[90vw] max-h-[85vh] flex flex-col overflow-visible"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button - Moved outside the image container */}
+            {/* Close Button */}
             <button
               onClick={handleClose}
               className="absolute -top-12 right-0 md:-right-12 z-20 bg-white text-crown-navy hover:text-red-500 rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
@@ -54,7 +73,7 @@ const PopupModal = () => {
             
             {/* Scrollable content */}
             <div className="overflow-auto max-h-[85vh] flex items-center justify-center bg-gray-50 rounded-xl">
-               <img
+              <img
                 src="/popup.png"
                 alt="Notice"
                 className="w-auto h-auto max-w-full max-h-[80vh] object-contain block rounded-xl"
