@@ -59,24 +59,24 @@ const PopupModal = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="relative bg-white rounded-xl shadow-2xl max-w-[90vw] max-h-[85vh] flex flex-col overflow-visible"
+            className="relative bg-white rounded-xl shadow-2xl max-w-[98vw] max-h-[95vh] flex flex-col overflow-visible"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
+            {/* Close Button - Outside on the right */}
             <button
               onClick={handleClose}
-              className="absolute -top-12 right-0 md:-right-12 z-20 bg-white text-crown-navy hover:text-red-500 rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
+              className="absolute top-0 -right-14 z-20 bg-white text-crown-navy hover:text-red-500 rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
               aria-label="Close popup"
             >
               <X className="w-6 h-6" />
             </button>
             
             {/* Scrollable content */}
-            <div className="overflow-auto max-h-[85vh] flex items-center justify-center bg-gray-50 rounded-xl">
+            <div className="overflow-auto max-h-[95vh] flex items-center justify-center bg-gray-50 rounded-xl">
               <img
                 src="/popup.png"
                 alt="Notice"
-                className="w-auto h-auto max-w-full max-h-[80vh] object-contain block rounded-xl"
+                className="w-auto h-auto max-w-full max-h-[93vh] object-contain block rounded-xl"
               />
             </div>
           </motion.div>
